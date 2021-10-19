@@ -151,7 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AHSL.cpp" />
     <ClCompile Include="ConsoleAppColorPickerLab1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AHSL.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
