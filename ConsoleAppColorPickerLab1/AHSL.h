@@ -3,7 +3,9 @@
 class AHSL
 {
 public:
-	void ASHL(int hue, int saturation, int lightness);
+	AHSL();
+	AHSL(int hue, int saturation, int lightness);
+	//AHSL(AHSL elem);
 	int get_hue();
 	int get_saturation();
 	int get_lightness();

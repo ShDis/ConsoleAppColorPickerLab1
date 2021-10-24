@@ -1,23 +1,29 @@
 #include "AHSL.h"
+#include <math.h>
 
-void AHSL::ASHL(int hue, int saturation, int lightness)
+AHSL::AHSL()
 {
-	this->hue = hue;
-	this->saturation = saturation;
-	this->lightness = lightness;
+	this->hue = 0; //0 - 360, 0 == 360
+	this->saturation = 0; //0 - 255
+	this->lightness = 0; //-100 - 100
 }
 
-int AHSL::get_hue()
+AHSL::AHSL(int hue, int saturation, int lightness)
 {
-	return hue;
+	this->hue = abs(hue % 360); //0 - 360, 0 == 360
+	this->saturation = abs(saturation % 256); //0 - 255
+	this->lightness = lightness % 101; //-100 - 100
 }
 
-int AHSL::get_saturation()
-{
-	return saturation;
-}
+//AHSL::AHSL(AHSL elem)
+//{
+//	this->hue = abs(elem.hue % 360); //0 - 360, 0 == 360
+//	this->saturation = abs(elem.saturation % 256); //0 - 255
+//	this->lightness = elem.lightness % 101; //-100 - 100
+//}
 
-int AHSL::get_lightness()
-{
-	return lightness;
-}
+int AHSL::get_hue() { return hue; }
+
+int AHSL::get_saturation() { return saturation; }
+
+int AHSL::get_lightness() { return lightness; }
