@@ -1,9 +1,12 @@
-﻿#include <iostream>
-
-using namespace std;
+﻿#include "Terminal.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Terminal com;
+	while (true)
+		com.command_input();
+
+	system("pause");
+	return 0;
 }
 

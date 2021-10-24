@@ -153,9 +153,17 @@
   <ItemGroup>
     <ClCompile Include="AHSL.cpp" />
     <ClCompile Include="ConsoleAppColorPickerLab1.cpp" />
+    <ClCompile Include="Palette.cpp" />
+    <ClCompile Include="Terminal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AHSL.h" />
+    <ClInclude Include="Palette.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Terminal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ConsoleAppColorPickerLab1.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

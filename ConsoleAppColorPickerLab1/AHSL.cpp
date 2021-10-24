@@ -27,3 +27,10 @@ int AHSL::get_hue() { return hue; }
 int AHSL::get_saturation() { return saturation; }
 
 int AHSL::get_lightness() { return lightness; }
+
+bool AHSL::modifyElement(int hue, int saturation, int lightness)
+{
+	if (hue < 0 || hue > 360 && saturation < 0 || saturation > 255 && lightness < -100 || lightness > 100) //fail-fast
+		return false;
+	return true;
+}
