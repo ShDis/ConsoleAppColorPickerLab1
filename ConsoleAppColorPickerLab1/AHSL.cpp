@@ -22,15 +22,60 @@ AHSL::AHSL(int hue, int saturation, int lightness)
 //	this->lightness = elem.lightness % 101; //-100 - 100
 //}
 
-int AHSL::get_hue() { return hue; }
+int AHSL::getHue() { return hue; }
 
-int AHSL::get_saturation() { return saturation; }
+int AHSL::getSaturation() { return saturation; }
 
-int AHSL::get_lightness() { return lightness; }
+int AHSL::getLightness() { return lightness; }
 
 bool AHSL::modifyElement(int hue, int saturation, int lightness)
 {
-	if (hue < 0 || hue > 360 && saturation < 0 || saturation > 255 && lightness < -100 || lightness > 100) //fail-fast
+	if (!checkRangeHue(hue) || !checkRangeSaturation(saturation) || !checkRangeLightness(lightness))
+		return false; //fail-fast
+	return true;
+}
+
+bool AHSL::modifyHue(int hue)
+{
+	if (!checkRangeHue(hue))
+		return false;
+	else this->hue = hue;
+	return true;
+}
+
+bool AHSL::modifySaturation(int saturation)
+{
+	if (!checkRangeSaturation(saturation))
+		return false;
+	else this->saturation = saturation;
+	return true;
+}
+
+bool AHSL::modifyLightness(int lightness)
+{
+	if (!checkRangeLightness(lightness))
+		return false;
+	else this->lightness = lightness;
+	return true;
+}
+
+bool AHSL::checkRangeHue(int hue)
+{
+	if (hue < 0 || hue > 360)
+		return false;
+	return true;
+}
+
+bool AHSL::checkRangeSaturation(int saturation)
+{
+	if (saturation < 0 || saturation > 255)
+		return false;
+	return true;
+}
+
+bool AHSL::checkRangeLightness(int lightness)
+{
+	if (lightness < -100 || lightness > 100)
 		return false;
 	return true;
 }
