@@ -30,6 +30,6 @@ private:
 
 	const int clength = 6; //command_count
 	const string commands[6] = { "?","p", "all"}; //commands
-	const string commands_argtypes[6][3] = { {},{"int"},{ },{"string"},{"int"},{"string"} }; //argtypes [command_count][args_count+1]
-	const string available_commands = "Available commands:\n->?\n->p <id> - shows palette with entered id\n->all - shows all palettes\n->all";
+	const string commands_argtypes[6][3] = { {},{"int"},{ },{"int"} }; //argtypes [command_count][args_count+1]
+	const string available_commands = "Available commands:\n->?\n->p <id> - shows palette with entered id\n->all - shows all palettes\n->p_create <number_of_elements> - creates palette\n->p <id> ";
 };
